@@ -17,7 +17,10 @@ fn main() {
 
         let guess: u32 = match guess.trim().parse() {
             Ok(num) => num,
-            Err(x) => {println!("Error: {x}"); continue;}
+            Err(x) => {
+                println!("Error: {x}");
+                continue;
+            }
         };
 
         //println!("You guessed: {guess}");
@@ -28,7 +31,7 @@ fn main() {
                 println!("You win!");
                 break;
             }
-            Ordering::Greater => println!("Too big!")
+            Ordering::Greater => println!("Too big!"),
         }
     }
 }

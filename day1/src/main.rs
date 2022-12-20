@@ -19,7 +19,10 @@ fn main() {
         } else {
             let num: u32 = match line.trim().parse() {
                 Ok(n) => n,
-                Err(e) => {println!("ERROR: {}", e); 0}
+                Err(e) => {
+                    println!("ERROR: {}", e);
+                    0
+                }
             };
             current += num;
         }
@@ -28,6 +31,6 @@ fn main() {
     // Result
     totals.sort();
     let nr_elves = totals.len();
-    let total: u32 = totals[nr_elves-3..].iter().sum();
+    let total: u32 = totals[nr_elves - 3..].iter().sum();
     println!("{}", total);
 }
